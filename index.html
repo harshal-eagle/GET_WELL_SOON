@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Well Soon, My Love</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-30px); }
+        }
+        @keyframes wave {
+            0% { transform: rotate(0deg); }
+            25% { transform: rotate(15deg); }
+            50% { transform: rotate(0deg); }
+            75% { transform: rotate(-15deg); }
+            100% { transform: rotate(0deg); }
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #ff85a2; }
+        }
+        .typing-animation {
+            overflow: hidden;
+            border-right: .15em solid #ff85a2;
+            white-space: pre-wrap;
+            letter-spacing: .15em;
+            animation: blink-caret .75s step-end infinite;
+        }
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        .bouncing {
+            animation: bounce 2s ease infinite;
+        }
+        .waving {
+            animation: wave 2s ease infinite;
+            transform-origin: 70% 70%;
+        }
+        .heartbeat {
+            animation: heartbeat 1.5s ease-in-out infinite;
+        }
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            25% { transform: scale(1.1); }
+            50% { transform: scale(1); }
+            75% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        .fade-in {
+            animation: fadeIn 2s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .cloud {
+            animation: cloudMove 30s linear infinite;
+        }
+        @keyframes cloudMove {
+            from { transform: translateX(-100px); }
+            to { transform: translateX(calc(100vw + 100px)); }
+        }
+        .bg-pattern {
+            background-image: radial-gradient(#ffb6e1 2px, transparent 2px);
+            background-size: 40px 40px;
+        }
+        #personalMessage p {
+            margin-bottom: 1rem;
+            min-height: 1.5rem; 
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-pink-50 to-blue-50 min-h-screen overflow-x-hidden font-sans">
+    <!-- Splash Screen -->
+    <div id="splash" class="fixed inset-0 bg-pink-100 bg-pattern flex flex-col items-center justify-center z-50 transition-opacity duration-1000">
+        <div class="bouncing text-center mb-8">
+            <i class="fas fa-heart text-pink-400 text-8xl"></i>
+        </div>
+        <div class="text-center">
+            <h1 class="text-4xl font-bold text-pink-600 mb-6">For My Special Aunty</h1>
+            <div class="waving inline-block text-6xl mb-8">🥰</div>
+            <button id="startBtn" class="bg-pink-400 hover:bg-pink-500 text-white font-bold py-3 px-8 rounded-full text-xl shadow-lg transform transition hover:scale-105">
+                Click to Start <i class="fas fa-arrow-right ml-2"></i>
+            </button>
+        </div>
+        <div class="absolute bottom-4 text-pink-400">
+            <i class="fas fa-arrow-down animate-bounce"></i>
+        </div>
+    </div>
+
+    
+    <div id="mainContent" class="hidden">
+        
+        <div class="fixed top-20 left-10 text-4xl text-pink-200 floating">❤️</div>
+        <div class="fixed top-1/3 right-20 text-4xl text-blue-200 floating" style="animation-delay: 1s;">❤️</div>
+        <div class="fixed top-1/4 right-1/4 text-4xl text-purple-200 floating" style="animation-delay: 2s;">❤️</div>
+        <div class="fixed bottom-1/4 left-1/4 text-4xl text-pink-200 floating" style="animation-delay: 3s;">❤️</div>
+           
+        <div class="cloud fixed top-10 left-0 text-6xl text-white opacity-70">☁️</div>
+        <div class="cloud fixed top-20 right-0 text-5xl text-white opacity-70" style="animation-delay: 5s;">☁️</div>
+        <div class="cloud fixed bottom-20 left-0 text-7xl text-white opacity-70" style="animation-delay: 10s;">☁️</div>
+        
+        <!-- Main header -->
+        <header class="pt-16 pb-8 text-center relative z-10">
+            <h1 class="text-5xl md:text-6xl font-bold text-pink-600 mb-6">Get Well Soon, Komal <span class="heartbeat inline-block">💖</span></h1>
+        </header>
+
+        <!-- Main content -->
+        <main class="container mx-auto px-4 pb-16 max-w-4xl relative z-10">
+            <!-- Nurse with soup -->
+            <div class="flex flex-col md:flex-row items-center justify-center mb-12 bg-white bg-opacity-70 rounded-3xl p-6 shadow-lg">
+                <div class="w-48 h-48 mb-6 md:mb-0 md:mr-8 flex items-center justify-center">
+                    <div class="relative">
+                        <div class="text-8xl">🧸</div>
+                        <div class="absolute -bottom-2 -right-4 text-4xl">🥣</div>
+                    </div>
+                </div>
+                <div class="text-center md:text-left">
+                    <h2 class="text-3xl font-bold text-purple-600 mb-4">Special Delivery!</h2>
+                    <p class="text-lg text-gray-700">Your favorite teddy bear brought you some magical healing soup! 🍲✨</p>
+                </div>
+            </div>
+
+            <!-- Personal message -->
+            <div class="bg-white bg-opacity-80 rounded-3xl p-8 mb-12 shadow-lg fade-in">
+                <h2 class="text-3xl font-bold text-pink-600 mb-6 text-center">A Message From Harshal</h2>
+                <div id="personalMessage" class="text-lg text-gray-800 space-y-4">
+                    <p id="messageLine1" class="typing-animation"></p>
+                    <p id="messageLine2" class="typing-animation"></p>
+                    <p id="messageLine3" class="typing-animation"></p>
+                    <p id="messageLine4" class="typing-animation"></p>
+                    <p id="messageLine5" class="typing-animation"></p>
+                    <p id="messageLine6" class="text-right font-bold text-pink-500 typing-animation"></p>
+                </div>
+            </div>
+
+            <!-- Hug counter -->
+            <div class="bg-gradient-to-r from-pink-100 to-purple-100 rounded-3xl p-8 mb-12 shadow-lg text-center fade-in" style="animation-delay: 0.5s;">
+                <h2 class="text-3xl font-bold text-purple-600 mb-4">Virtual Hugs Sent</h2>
+                <div class="text-6xl text-pink-500 mb-4" id="hugCounter">0</div>
+                <button id="sendHugBtn" class="bg-pink-400 hover:bg-pink-500 text-white font-bold py-3 px-8 rounded-full text-xl shadow-lg transform transition hover:scale-105">
+                    Send Another Hug <i class="fas fa-heart ml-2"></i>
+                </button>
+            </div>
+
+            <!-- Get well tips -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 fade-in" style="animation-delay: 1s;">
+                <div class="bg-white bg-opacity-80 rounded-3xl p-6 shadow-lg">
+                    <h3 class="text-2xl font-bold text-blue-500 mb-4 flex items-center"><i class="fas fa-bed mr-3"></i> Rest Well</h3>
+                    <p class="text-gray-700">Your body heals best when you're resting. Take this time to relax and recharge.</p>
+                </div>
+                <div class="bg-white bg-opacity-80 rounded-3xl p-6 shadow-lg">
+                    <h3 class="text-2xl font-bold text-green-500 mb-4 flex items-center"><i class="fas fa-glass-water mr-3"></i> Stay Hydrated</h3>
+                    <p class="text-gray-700">Drink plenty of fluids to help your body recover faster.</p>
+                </div>
+                <div class="bg-white bg-opacity-80 rounded-3xl p-6 shadow-lg">
+                    <h3 class="text-2xl font-bold text-yellow-500 mb-4 flex items-center"><i class="fas fa-utensils mr-3"></i> Eat Nutritious Food</h3>
+                    <p class="text-gray-700">Nourish your body with healthy foods that will help you regain your strength.</p>
+                </div>
+                <div class="bg-white bg-opacity-80 rounded-3xl p-6 shadow-lg">
+                    <h3 class="text-2xl font-bold text-red-500 mb-4 flex items-center"><i class="fas fa-smile-beam mr-3"></i> Stay Positive</h3>
+                    <p class="text-gray-700">A positive mindset can work wonders for your recovery!</p>
+                </div>
+            </div>
+
+            <!-- Flower garden -->
+            <div class="text-center mb-12 fade-in" style="animation-delay: 1.5s;">
+                <h2 class="text-3xl font-bold text-pink-600 mb-6">A Flower Garden for You</h2>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <div class="text-4xl floating" style="animation-delay: 0s;">🌷</div>
+                    <div class="text-4xl floating" style="animation-delay: 0.5s;">🌹</div>
+                    <div class="text-4xl floating" style="animation-delay: 1s;">🌸</div>
+                    <div class="text-4xl floating" style="animation-delay: 1.5s;">🌼</div>
+                    <div class="text-4xl floating" style="animation-delay: 2s;">🌻</div>
+                    <div class="text-4xl floating" style="animation-delay: 2.5s;">💐</div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-pink-100 bg-opacity-70 py-8 text-center text-pink-600">
+            <p class="text-lg">Wishing you a speedy recovery, Aunty!</p>
+        </footer>
+
+        <!-- Audio element -->
+        <audio id="bgMusic" loop>
+            <source src="Paro - @adityarikhari  UNPLG'd.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Splash screen click handler
+            const startBtn = document.getElementById('startBtn');
+            const splash = document.getElementById('splash');
+            const mainContent = document.getElementById('mainContent');
+            const bgMusic = document.getElementById('bgMusic');
+            const hugCounter = document.getElementById('hugCounter');
+            const sendHugBtn = document.getElementById('sendHugBtn');
+            
+            // Personal message lines
+            const messageLines = [
+                "My Dearest Komal😎,",
+                "Seeing you not feeling well breaks my heart. I wish I could take all your discomfort away and replace it with endless happness and sweet moments.",
+                "Please remember that you're the strongest person I know, and this is just a temporary setback. Your body is amazing at healing itself, and I know you'll be back to your wonderful self soon.",
+                "Until then, rest as much as you can, drink plenty of fluids, and know that I'm thinking of you every moment. I've included some virtual hugs below that you can redeem anytime you need them!",
+                "After that you have to give a party to me Aunty 😉",
+                "",
+                "All my love,Your Sweetheart"
+            ];
+            
+            let hugsSent = 0;
+            
+            
+            startBtn.addEventListener('click', function() {
+                // Fade out splash screen
+                splash.style.opacity = '0';
+                
+                // After fade out completes, hide splash and show main content
+                setTimeout(function() {
+                    splash.style.display = 'none';
+                    mainContent.style.display = 'block';
+                    
+                    // Start background music (with reduced volume)
+                    bgMusic.volume = 0.3;
+                    bgMusic.play().catch(e => console.log("Autoplay prevented:", e));
+                    
+                    // Start typing animation for personal message
+                    typePersonalMessage();
+                }, 0);
+            });
+            
+            // Type personal message line by line
+            function typePersonalMessage() {
+                const lineIds = [
+                    'messageLine1', 'messageLine2', 'messageLine3', 
+                    'messageLine4', 'messageLine5', 'messageLine6'
+                ];
+                
+                let currentLine = 0;
+                let currentChar = 0;
+                const speed = 20; // typing speed in ms
+                
+                function typeNextLine() {
+                    if (currentLine >= messageLines.length) return;
+                    
+                    const lineElement = document.getElementById(lineIds[currentLine]);
+                    if (currentChar < messageLines[currentLine].length) {
+                        lineElement.innerHTML += messageLines[currentLine].charAt(currentChar);
+                        currentChar++;
+                        setTimeout(typeNextLine, speed);
+                    } else {
+                        // Move to next line
+                        currentLine++;
+                        currentChar = 0;
+                        setTimeout(typeNextLine, 500); // pause between lines
+                    }
+                }
+                
+                // Start typing
+                setTimeout(typeNextLine, 1000);
+            }
+            
+            // Hug button functionality
+            sendHugBtn.addEventListener('click', function() {
+                hugsSent++;
+                hugCounter.textContent = hugsSent;
+                
+                // Create a floating heart animation
+                const heart = document.createElement('div');
+                heart.innerHTML = '❤️';
+                heart.className = 'text-3xl absolute bottom-20 left-1/2 transform -translate-x-1/2 animate-bounce opacity-0';
+                document.body.appendChild(heart);
+                
+                // Fade in
+                setTimeout(() => heart.classList.add('opacity-100'), 10);
+                
+                // Remove after animation
+                setTimeout(() => heart.remove(), 2000);
+                
+                // Button animation
+                sendHugBtn.classList.add('animate-ping');
+                setTimeout(() => sendHugBtn.classList.remove('animate-ping'), 300);
+            });
+            
+            // Make splash screen elements interactive
+            const splashHearts = document.querySelectorAll('#splash .fa-heart');
+            splashHearts.forEach(heart => {
+                heart.addEventListener('mouseenter', function() {
+                    this.classList.add('animate-spin');
+                });
+                heart.addEventListener('mouseleave', function() {
+                    this.classList.remove('animate-spin');
+                });
+            });
+            
+            // Add floating effect to all elements with floating class
+            const floatingElements = document.querySelectorAll('.floating');
+            floatingElements.forEach((el, index) => {
+                el.style.animationDelay = `${index * 0.5}s`;
+            });
+        });
+    </script>
+</body>
+</html>
